@@ -1,0 +1,251 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+header {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    padding: 30px;
+}
+
+header h1 {
+    margin-bottom: 20px;
+}
+
+.header-info p {
+    margin: 8px 0;
+    opacity: 0.95;
+}
+
+/* Statistiques */
+.stats-panel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 30px;
+    background: #f8f9fa;
+}
+
+.stat-card {
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.stat-card h3 {
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.stat-number {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.conforme { background: #d4edda; color: #155724; }
+.remarque { background: #fff3cd; color: #856404; }
+.ecart { background: #f8d7da; color: #721c24; }
+.sans-objet { background: #e2e3e5; color: #383d41; }
+
+/* Contrôles */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background: white;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.filters label {
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.filters input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* Onglets */
+.tabs {
+    display: flex;
+    background: #f8f9fa;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 15px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.tab-btn:hover {
+    background: rgba(102, 126, 234, 0.1);
+}
+
+.tab-btn.active {
+    background: white;
+    border-bottom: 3px solid #667eea;
+}
+
+/* Contenu des onglets */
+.tab-content {
+    display: none;
+    padding: 30px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Sections */
+.section {
+    margin-bottom: 40px;
+}
+
+.section-title {
+    background: #2a5298;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.subsection-title {
+    background: #e9ecef;
+    padding: 10px;
+    border-left: 4px solid #667eea;
+    margin: 20px 0 10px 0;
+    font-weight: bold;
+}
+
+/* Items d'évaluation */
+.eval-item {
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    transition: all 0.3s;
+}
+
+.eval-item:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.eval-item.hidden {
+    display: none;
+}
+
+.eval-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.eval-code {
+    font-weight: bold;
+    color: #2a5298;
+}
+
+.eval-badge {
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.badge-C { background: #d4edda; color: #155724; }
+.badge-R { background: #fff3cd; color: #856404; }
+.badge-E { background: #f8d7da; color: #721c24; }
+.badge-X { background: #e2e3e5; color: #383d41; }
+
+.eval-description {
+    color: #495057;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.eval-observation {
+    background: #f8f9fa;
+    padding: 10px;
+    border-left: 3px solid #667eea;
+    margin: 10px 0;
+}
+
+.eval-action {
+    background: #fff3cd;
+    padding: 10px;
+    border-left: 3px solid #ffc107;
+    margin: 10px 0;
+}
+
+.eval-action strong {
+    color: #856404;
+}
+
+.info-box {
+    background: #e7f3ff;
+    border: 1px solid #b3d7ff;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .stats-panel {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .controls {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .filters {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
