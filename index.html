@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyse Rapport Amiante SOCOTEC</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- SheetJS CDN -->
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔬 Analyse Rapport Amiante SOCOTEC</h1>
+            <div class="header-info">
+                <p><strong>Personne évaluée :</strong> TISSOT BEZ Lionel</p>
+                <p><strong>Référence rapport :</strong> 2409CGEDI - BI11440000001421</p>
+                <p><strong>Évaluateur :</strong> Agent IA d'analyse SOCOTEC</p>
+            </div>
+        </header>
+
+        <!-- Statistiques globales -->
+        <div class="stats-panel">
+            <div class="stat-card conforme">
+                <h3>Conformes (C)</h3>
+                <p class="stat-number" id="stat-c">0</p>
+            </div>
+            <div class="stat-card remarque">
+                <h3>Remarques (R)</h3>
+                <p class="stat-number" id="stat-r">0</p>
+            </div>
+            <div class="stat-card ecart">
+                <h3>Écarts (E)</h3>
+                <p class="stat-number" id="stat-e">0</p>
+            </div>
+            <div class="stat-card sans-objet">
+                <h3>Sans objet (X)</h3>
+                <p class="stat-number" id="stat-x">0</p>
+            </div>
+        </div>
+
+        <!-- Filtres et actions -->
+        <div class="controls">
+            <div class="filters">
+                <label><input type="checkbox" id="filter-c" checked> Afficher C</label>
+                <label><input type="checkbox" id="filter-r" checked> Afficher R</label>
+                <label><input type="checkbox" id="filter-e" checked> Afficher E</label>
+                <label><input type="checkbox" id="filter-x" checked> Afficher X</label>
+            </div>
+            <button id="btn-export" class="btn-primary">📥 Télécharger Excel</button>
+        </div>
+
+        <!-- Onglets -->
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="repérages">Amiante-Repérages</button>
+            <button class="tab-btn" data-tab="evat">Amiante-EVAT</button>
+        </div>
+
+        <!-- Contenu des onglets -->
+        <div class="tab-content active" id="tab-repérages">
+            <div id="content-repérages"></div>
+        </div>
+
+        <div class="tab-content" id="tab-evat">
+            <div id="content-evat">
+                <div class="info-box">
+                    <p><strong>Note :</strong> Le rapport analysé est un repérage avant travaux, non un EVAT. Tous les points sont marqués X (Sans objet).</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
